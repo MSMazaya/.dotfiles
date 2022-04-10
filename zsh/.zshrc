@@ -114,6 +114,7 @@ alias ls="exa --icons"
 export NVM_DIR="/home/mazaya/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+bindkey -s ^f "tmux-sessionizer\n"
 
 # export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 # export PATH=$PATH:$JAVA_HOME/bin
