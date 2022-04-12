@@ -13,17 +13,35 @@ set scrolloff=8
 
 call plug#begin('~/.vim/plugged')
 
+" Idk what is this, but its a prerequisite to another plugin
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+
+" LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
+
+" TS
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+
+" Navigation
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'ThePrimeagen/harpoon'
-Plug 'tpope/vim-fugitive'
+
+" Colorscheme
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+
+" Editor Perks
 Plug 'vim-airline/vim-airline'
 Plug 'akinsho/toggleterm.nvim'
+
+" Git
+Plug 'tpope/vim-fugitive'
+
+" Autocompletion
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 
 call plug#end()
 
@@ -34,27 +52,8 @@ let mapleader = " "
 colorscheme tokyonight
 highlight Normal guibg=none
 
-" ToggleTerm
-autocmd TermEnter term://*toggleterm#*
-      \ tnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm direction=float"<CR>
-nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm direction=float"<CR>
-inoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm direction=float"<CR>
-
-" Git
-nnoremap <leader>gj :diffget //3<CR>
-nnoremap <leader>gk :diffget //2<CR>
-nnoremap <leader>gs :G<CR>
-
-" Telescope
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-
-" Harpoon
-nnoremap <silent><leader>m :lua require("harpoon.mark").add_file()<CR>
-nnoremap <silent><C-h> :lua require("harpoon.ui").toggle_quick_menu()<CR>
-nnoremap <silent><leader>b :lua require("harpoon.ui").nav_file(vim.fn.input("Grep For > "))<CR>
+" Source lua configs
+lua require("mazaya")
 
 " Basic remap
 nnoremap <leader>h :noh<CR>
@@ -62,9 +61,6 @@ nnoremap <leader>e :Explore<CR>
 nnoremap <C-s> :w<CR>
 nnoremap Y y$
 nnoremap P op
-
-" Expore remap
-nnoremap <silent> <leader>a :!touch <c-r><c-p><cr><cr>
 
 " Text moving on visual
 vnoremap J :m '>+1<CR>gv=gv
