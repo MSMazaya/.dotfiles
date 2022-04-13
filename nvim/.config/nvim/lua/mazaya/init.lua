@@ -6,3 +6,5 @@ function CreateNoremap(type, opts)
 end
 
 Nnoremap = CreateNoremap("n", { noremap = true })
+
+require('mazaya.commenter')
