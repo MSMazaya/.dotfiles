@@ -7,4 +7,7 @@ end
 
 Nnoremap = CreateNoremap("n", { noremap = true })
 
-require('mazaya.commenter')
+require('mazaya.lsp')
+
+-- Basic Setup
+require('nvim_comment').setup()

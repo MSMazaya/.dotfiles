@@ -40,18 +40,29 @@ Plug 'terrortylor/nvim-comment'
 Plug 'tpope/vim-fugitive'
 
 " Autocompletion
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 
+" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+" Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 call plug#end()
+
 
 " Basic global config
 let mapleader = " "
 
 " Color scheme
 colorscheme tokyonight
+
+" uncomment for transparent bg:
 " highlight Normal guibg=none
+
+" Autocomplete
+set completeopt=menu,menuone,noselect
 
 " Source lua configs
 lua require("mazaya")
