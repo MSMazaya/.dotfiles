@@ -34,6 +34,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 " Editor Perks
 Plug 'vim-airline/vim-airline'
 Plug 'akinsho/toggleterm.nvim'
+Plug 'terrortylor/nvim-comment'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -50,7 +51,7 @@ let mapleader = " "
 
 " Color scheme
 colorscheme tokyonight
-highlight Normal guibg=none
+" highlight Normal guibg=none
 
 " Source lua configs
 lua require("mazaya")
