@@ -5,7 +5,8 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Paths
-export PATH=$PATH:$HOME/.platformio/penv/bin
+export GOPATH=$HOME/Documents/fillyn/microservice
+export PATH=$PATH:$HOME/.platformio/penv/bin:/usr/local/go/bin:$GOPATH/bin
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

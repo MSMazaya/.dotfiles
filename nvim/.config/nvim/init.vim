@@ -10,6 +10,8 @@ set nowrap
 set incsearch
 set termguicolors
 set scrolloff=8
+set signcolumn=yes
+set colorcolumn=80
 
 call plug#begin('~/.vim/plugged')
 
@@ -20,6 +22,9 @@ Plug 'nvim-lua/plenary.nvim'
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
+
+" Platformio
+Plug 'normen/vim-pio'
 
 " TS
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -35,6 +40,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'vim-airline/vim-airline'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'terrortylor/nvim-comment'
+Plug 'jiangmiao/auto-pairs'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -46,9 +52,6 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 
-" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-" Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 call plug#end()
 
 
@@ -77,6 +80,10 @@ nnoremap P op
 " Text moving on visual
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" Visual indent remap (keep on visual after indentation)
+vnoremap < <gv
+vnoremap > >gv
 
 " Auto
 augroup highlight_yank
