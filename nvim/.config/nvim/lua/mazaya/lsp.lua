@@ -22,13 +22,13 @@ cmp.setup({
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
     sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
+      { name = 'nvim_lsp', max_item_count = 7 },
+      { name = 'vsnip', max_item_count = 7  }, -- For vsnip users.
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
     }, {
-      { name = 'buffer' },
+      { name = 'buffer', max_item_count = 7 },
     })
 })
 
@@ -54,8 +54,9 @@ cmp.setup.cmdline(':', {
       { name = 'path' }
     }, {
       { name = 'cmdline' }
-    })
+    }),
 })
+
 
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
