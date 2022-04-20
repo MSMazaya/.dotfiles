@@ -84,6 +84,9 @@ vnoremap K :m '<-2<CR>gv=gv
 vnoremap < <gv
 vnoremap > >gv
 
+" Switch buffer remap
+nnoremap <leader>bb <c-^>
+
 " Toggle Netrw Explore
 let g:NetrwIsOpen=0
 
