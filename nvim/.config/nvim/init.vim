@@ -72,7 +72,6 @@ lua require("mazaya")
 
 " Basic remap
 nnoremap <leader>h :noh<CR>
-nnoremap <leader>e :Explore<CR>
 nnoremap <C-s> :w<CR>
 nnoremap Y y$
 nnoremap P op
@@ -84,6 +83,27 @@ vnoremap K :m '<-2<CR>gv=gv
 " Visual indent remap (keep on visual after indentation)
 vnoremap < <gv
 vnoremap > >gv
+
+" Toggle Netrw Explore
+let g:NetrwIsOpen=0
+
+function! ToggleNetrw()
+    if g:NetrwIsOpen
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i 
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Explore
+    endif
+endfunction
+
+noremap <silent> <leader>e :call ToggleNetrw()<CR>
 
 " Auto
 augroup highlight_yank
