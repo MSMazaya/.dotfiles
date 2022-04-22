@@ -11,3 +11,5 @@ require('mazaya.lsp')
 
 -- Basic Setup
 require('nvim_comment').setup()
+require('trouble').setup()
+require('todo-comments').setup()

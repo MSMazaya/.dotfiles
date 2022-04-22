@@ -52,6 +52,14 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+
+" Diagnostics
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
+
+" Todo Tree
+Plug 'folke/todo-comments.nvim'
+
 call plug#end()
 
 
@@ -86,6 +94,13 @@ vnoremap > >gv
 
 " Switch buffer remap
 nnoremap <leader>bb <c-^>
+
+" Navigation of panes
+noremap <silent> <c-k> :wincmd k<CR>
+noremap <silent> <c-j> :wincmd j<CR>
+" this is so sad, i need the remap for harpoon:
+noremap <silent> <c-H> :wincmd h<CR>
+noremap <silent> <c-l> :wincmd l<CR>
 
 " Toggle Netrw Explore
 let g:NetrwIsOpen=0
