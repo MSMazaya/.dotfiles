@@ -5,7 +5,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Paths
-export GOPATH=$HOME/Documents/fillyn/microservice
+export GOPATH=$HOME/go:$HOME/Documents/fillyn/microservice/backend
 export PATH=$PATH:$HOME/.platformio/penv/bin:/usr/local/go/bin:$GOPATH/bin
 
 # Set name of the theme to load --- if set to "random", it will
