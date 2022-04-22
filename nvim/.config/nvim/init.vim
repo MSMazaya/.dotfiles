@@ -11,7 +11,6 @@ set incsearch
 set termguicolors
 set scrolloff=8
 set signcolumn=yes
-set colorcolumn=80
 
 call plug#begin('~/.vim/plugged')
 
@@ -51,7 +50,8 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 call plug#end()
 
 
@@ -64,7 +64,7 @@ colorscheme tokyonight
 " uncomment for transparent bg:
 " highlight Normal guibg=none
 
-" Autocomplete
+" AUtocompletion
 set completeopt=menu,menuone,noselect
 
 " Source lua configs
@@ -106,7 +106,7 @@ function! ToggleNetrw()
     endif
 endfunction
 
-noremap <silent> <leader>e :call ToggleNetrw()<CR>
+nnoremap <silent> <leader>e :call ToggleNetrw()<CR>
 
 " Auto
 augroup highlight_yank
