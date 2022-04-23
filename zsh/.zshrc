@@ -8,6 +8,9 @@ export ZSH=$HOME/.oh-my-zsh
 export GOPATH=$HOME/go:$HOME/Documents/fillyn/microservice/backend
 export PATH=$PATH:$HOME/.platformio/penv/bin:/usr/local/go/bin:$GOPATH/bin
 
+# Sources
+source /opt/ros/noetic/setup.zsh
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME

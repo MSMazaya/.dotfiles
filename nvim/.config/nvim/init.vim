@@ -11,6 +11,7 @@ set incsearch
 set termguicolors
 set scrolloff=8
 set signcolumn=yes
+set nohlsearch
 
 call plug#begin('~/.vim/plugged')
 
@@ -33,13 +34,17 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'ThePrimeagen/harpoon'
 
 " Colorscheme
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+" Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'projekt0n/github-nvim-theme'
+
 
 " Editor Perks
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline' 
+Plug 'vim-airline/vim-airline-themes'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'terrortylor/nvim-comment'
-Plug 'jiangmiao/auto-pairs'
+Plug 'cohama/lexima.vim'
+Plug 'kyazdani42/nvim-tree.lua'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -60,14 +65,18 @@ Plug 'folke/trouble.nvim'
 " Todo Tree
 Plug 'folke/todo-comments.nvim'
 
-call plug#end()
+" ROS
+Plug 'MSMazaya/ros-nvim'
 
+call plug#end() 
 
 " Basic global config
 let mapleader = " "
 
 " Color scheme
-colorscheme tokyonight
+colorscheme github_dark_default
+let g:airline_theme='google_dark'
+set termguicolors
 
 " uncomment for transparent bg:
 " highlight Normal guibg=none
@@ -75,11 +84,13 @@ colorscheme tokyonight
 " AUtocompletion
 set completeopt=menu,menuone,noselect
 
+" Yank copy
+set clipboard=unnamedplus
+
 " Source lua configs
 lua require("mazaya")
 
 " Basic remap
-nnoremap <leader>h :noh<CR>
 nnoremap <C-s> :w<CR>
 nnoremap Y y$
 nnoremap P op
@@ -96,32 +107,10 @@ vnoremap > >gv
 nnoremap <leader>bb <c-^>
 
 " Navigation of panes
-noremap <silent> <c-k> :wincmd k<CR>
-noremap <silent> <c-j> :wincmd j<CR>
-" this is so sad, i need the remap for harpoon:
-noremap <silent> <c-H> :wincmd h<CR>
-noremap <silent> <c-l> :wincmd l<CR>
-
-" Toggle Netrw Explore
-let g:NetrwIsOpen=0
-
-function! ToggleNetrw()
-    if g:NetrwIsOpen
-        let i = bufnr("$")
-        while (i >= 1)
-            if (getbufvar(i, "&filetype") == "netrw")
-                silent exe "bwipeout " . i 
-            endif
-            let i-=1
-        endwhile
-        let g:NetrwIsOpen=0
-    else
-        let g:NetrwIsOpen=1
-        silent Explore
-    endif
-endfunction
-
-nnoremap <silent> <leader>e :call ToggleNetrw()<CR>
+noremap <c-k> :wincmd k<CR>
+noremap <c-j> :wincmd j<CR>
+noremap <c-h> :wincmd h<CR>
+noremap <c-l> :wincmd l<CR>
 
 " Auto
 augroup highlight_yank
