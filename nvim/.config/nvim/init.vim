@@ -68,6 +68,10 @@ Plug 'folke/todo-comments.nvim'
 " ROS
 Plug 'MSMazaya/ros-nvim'
 
+" Cmake
+Plug 'cdelledonne/vim-cmake'
+Plug 'antoinemadec/FixCursorHold.nvim'
+
 call plug#end() 
 
 " Basic global config
