@@ -117,3 +117,10 @@ bindkey -s ^f "tmux-sessionizer\n"
 
 # export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 # export PATH=$PATH:$JAVA_HOME/bin
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+# zoxide
+eval "$(zoxide init zsh)"
+alias cd="z"
