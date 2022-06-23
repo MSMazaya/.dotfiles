@@ -72,6 +72,9 @@ Plug 'MSMazaya/ros-nvim'
 Plug 'cdelledonne/vim-cmake'
 Plug 'antoinemadec/FixCursorHold.nvim'
 
+" Copilot
+Plug 'github/copilot.vim'
+
 call plug#end() 
 
 " Basic global config
@@ -85,7 +88,7 @@ set termguicolors
 " uncomment for transparent bg:
 " highlight Normal guibg=none
 
-" AUtocompletion
+" Autocompletion
 set completeopt=menu,menuone,noselect
 
 " Yank copy
@@ -115,6 +118,8 @@ noremap <c-k> :wincmd k<CR>
 noremap <c-j> :wincmd j<CR>
 noremap <c-h> :wincmd h<CR>
 noremap <c-l> :wincmd l<CR>
+
+nnoremap <leader>format :lua vim.lsp.buf.formatting()<cr>
 
 " Auto
 augroup highlight_yank
