@@ -75,6 +75,14 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 " Copilot
 Plug 'github/copilot.vim'
 
+" Svelte
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+
+" Emmet
+Plug 'mattn/emmet-vim'
+
 call plug#end() 
 
 " Basic global config
