@@ -23,6 +23,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 
+" LSP Saga
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+
 " Platformio
 Plug 'normen/vim-pio'
 
@@ -126,8 +129,6 @@ noremap <c-k> :wincmd k<CR>
 noremap <c-j> :wincmd j<CR>
 noremap <c-h> :wincmd h<CR>
 noremap <c-l> :wincmd l<CR>
-
-nnoremap <leader>format :lua vim.lsp.buf.formatting()<cr>
 
 " Auto
 augroup highlight_yank

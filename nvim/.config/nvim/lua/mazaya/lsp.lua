@@ -90,5 +90,5 @@ lsp_installer.on_server_ready(function(server)
     -- This setup() function will take the provided server configuration and decorate it with the necessary properties
     -- before passing it onwards to lspconfig.
     -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-        server:setup(opts)
+    server:setup(opts)
 end)
