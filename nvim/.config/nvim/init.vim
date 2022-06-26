@@ -40,7 +40,6 @@ Plug 'ThePrimeagen/harpoon'
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'projekt0n/github-nvim-theme'
 
-
 " Editor Perks
 Plug 'vim-airline/vim-airline' 
 Plug 'vim-airline/vim-airline-themes'
@@ -135,3 +134,5 @@ augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
 augroup END
+
+" TODO: Make all plugins to describe functionality rather than "what plugin is it"
