@@ -85,6 +85,9 @@ Plug 'evanleck/vim-svelte', {'branch': 'main'}
 " Emmet
 Plug 'mattn/emmet-vim'
 
+" Symbol outline
+Plug 'simrat39/symbols-outline.nvim'
+
 call plug#end() 
 
 " Basic global config
