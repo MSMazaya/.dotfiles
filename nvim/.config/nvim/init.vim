@@ -12,6 +12,7 @@ set termguicolors
 set scrolloff=8
 set signcolumn=yes
 set nohlsearch
+set cursorline
 
 call plug#begin('~/.vim/plugged')
 
@@ -38,11 +39,13 @@ Plug 'ThePrimeagen/harpoon'
 
 " Colorscheme
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'projekt0n/github-nvim-theme'
+" Plug 'projekt0n/github-nvim-theme'
+Plug 'EdenEast/nightfox.nvim' 
 
 " Editor Perks
-Plug 'vim-airline/vim-airline' 
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline' 
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'feline-nvim/feline.nvim', { 'branch': '0.5-compat' }
 Plug 'akinsho/toggleterm.nvim'
 Plug 'terrortylor/nvim-comment'
 Plug 'cohama/lexima.vim'
@@ -50,6 +53,7 @@ Plug 'kyazdani42/nvim-tree.lua'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'lewis6991/gitsigns.nvim'
 
 " Autocompletion
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -94,7 +98,7 @@ call plug#end()
 let mapleader = " "
 
 " Color scheme
-colorscheme github_dark_default
+colorscheme nightfox
 let g:airline_theme='google_dark'
 set termguicolors
 
