@@ -8,6 +8,7 @@ end
 Nnoremap = CreateNoremap("n", { noremap = true })
 
 require('mazaya.lsp')
+require('mazaya.symbol_outline')
 
 -- Basic Setup
 require('nvim_comment').setup()
@@ -15,3 +16,5 @@ require('trouble').setup()
 require('todo-comments').setup()
 require('nvim-tree').setup()
 require('lspsaga').init_lsp_saga()
+require('feline').setup()
+require('gitsigns').setup()
