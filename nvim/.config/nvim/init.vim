@@ -136,6 +136,9 @@ noremap <c-j> :wincmd j<CR>
 noremap <c-h> :wincmd h<CR>
 noremap <c-l> :wincmd l<CR>
 
+" Paste below last yanked line
+nnoremap P '>p'<
+
 " Auto
 augroup highlight_yank
     autocmd!
