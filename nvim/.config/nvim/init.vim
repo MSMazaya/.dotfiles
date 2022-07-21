@@ -92,6 +92,9 @@ Plug 'mattn/emmet-vim'
 " Symbol outline
 Plug 'simrat39/symbols-outline.nvim'
 
+" Navigation
+Plug 'kevinhwang91/rnvimr'
+
 call plug#end() 
 
 " Basic global config
