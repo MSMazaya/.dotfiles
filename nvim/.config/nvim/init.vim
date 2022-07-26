@@ -35,7 +35,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Navigation
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'ThePrimeagen/harpoon'
+" Plug 'ThePrimeagen/harpoon'
 
 " Colorscheme
 " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
@@ -46,7 +46,7 @@ Plug 'EdenEast/nightfox.nvim'
 " Plug 'vim-airline/vim-airline' 
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'feline-nvim/feline.nvim', { 'branch': '0.5-compat' }
-Plug 'akinsho/toggleterm.nvim'
+Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 Plug 'terrortylor/nvim-comment'
 Plug 'cohama/lexima.vim'
 Plug 'kyazdani42/nvim-tree.lua'
@@ -93,7 +93,7 @@ Plug 'mattn/emmet-vim'
 Plug 'simrat39/symbols-outline.nvim'
 
 " Navigation
-Plug 'kevinhwang91/rnvimr'
+" Plug 'kevinhwang91/rnvimr'
 
 call plug#end() 
 

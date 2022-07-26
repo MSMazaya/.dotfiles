@@ -1,3 +1,3 @@
-" let NERDTreeShowHidden=1
+let NERDTreeShowHidden=1
 
-" nnoremap <leader>e :NvimTreeToggle<CR>
+nnoremap <leader>e :NvimTreeFindFileToggle<CR>
