@@ -21,3 +21,6 @@ require('toggleterm').setup()
 require('lspsaga').init_lsp_saga()
 require('feline').setup()
 require('gitsigns').setup()
+require("transparent").setup({
+    enable = true,
+})

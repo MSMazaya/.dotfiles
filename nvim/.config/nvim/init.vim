@@ -96,6 +96,9 @@ Plug 'simrat39/symbols-outline.nvim'
 " Navigation
 " Plug 'kevinhwang91/rnvimr'
 
+" Transparent background
+Plug 'xiyaowong/nvim-transparent'
+
 call plug#end() 
 
 " Basic global config
@@ -108,6 +111,13 @@ set termguicolors
 
 " uncomment for transparent bg:
 " highlight Normal guibg=none
+
+
+" Change Color when entering Insert Mode
+autocmd InsertEnter * set nocursorline
+
+" Revert Color to default when leaving Insert Mode
+autocmd InsertLeave * set nocursorline
 
 " Autocompletion
 set completeopt=menu,menuone,noselect
@@ -147,6 +157,10 @@ nnoremap P '>p'<
 augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
+augroup END
+
+augroup vimrc_nerdtree                                                       
+    autocmd BufEnter * silent! set cursorline
 augroup END
 
 " TODO: Make all plugins to describe functionality rather than "what plugin is it"
