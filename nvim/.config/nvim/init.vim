@@ -45,6 +45,7 @@ Plug 'EdenEast/nightfox.nvim'
 " Editor Perks
 " Plug 'vim-airline/vim-airline' 
 " Plug 'vim-airline/vim-airline-themes'
+Plug 'kylechui/nvim-surround'
 Plug 'feline-nvim/feline.nvim', { 'branch': '0.5-compat' }
 Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 Plug 'terrortylor/nvim-comment'
