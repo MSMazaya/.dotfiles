@@ -38,13 +38,13 @@ cmp.setup({
         -- ['<C-N>'] = cmp.mapping(cmp.mapping.select_prev_item()),
     },
     sources = cmp.config.sources({
-        { name = "nvim_lsp", max_item_count = 7 },
-        { name = "vsnip", max_item_count = 7 }, -- For vsnip users.
-        -- { name = 'luasnip' }, -- For luasnip users.
+        { name = 'luasnip' }, -- For luasnip users.
+        { name = "nvim_lsp" },
+        { name = "vsnip" }, -- For vsnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
     }, {
-        { name = "buffer", max_item_count = 7 },
+        { name = "buffer" },
     }),
 })
 
