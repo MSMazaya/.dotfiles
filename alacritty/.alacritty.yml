@@ -65,9 +65,15 @@ schemes:
   # normal dark theme
 colors: *tokyo-night
 window:
-  opacity: 0.5
+  opacity: 0.8
   decorations: none
 font:
+  normal:
+    family: FiraCode Nerd Font
+    style: Regular
+  bold:
+    family: FiraCode Nerd Font
+    style: Bold
   size: 8
 
 
