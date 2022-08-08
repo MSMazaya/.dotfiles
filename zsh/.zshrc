@@ -124,3 +124,10 @@ bindkey -s ^f "tmux-sessionizer\n"
 # zoxide
 eval "$(zoxide init zsh)"
 alias cd="z"
+
+# bun completions
+[ -s "/home/mazaya/.bun/_bun" ] && source "/home/mazaya/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
