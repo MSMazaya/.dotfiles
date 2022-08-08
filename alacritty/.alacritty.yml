@@ -30,7 +30,6 @@ schemes:
       cyan:    '0x0db9d7'
       white:   '0xacb0d0'
 
-    opacity: 0.4
     decoration: none
 
 
