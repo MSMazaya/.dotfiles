@@ -4,8 +4,8 @@ cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
             -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
             -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         end,
@@ -38,9 +38,9 @@ cmp.setup({
         -- ['<C-N>'] = cmp.mapping(cmp.mapping.select_prev_item()),
     },
     sources = cmp.config.sources({
-        { name = 'luasnip' }, -- For luasnip users.
         { name = "nvim_lsp" },
-        { name = "vsnip" }, -- For vsnip users.
+        { name = 'luasnip' }, -- For luasnip users.
+        -- { name = "vsnip" }, -- For vsnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
     }, {
@@ -73,22 +73,7 @@ cmp.setup.cmdline(":", {
     }),
 })
 
--- Setup lspconfig.
-local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
-local lsp_installer = require("nvim-lsp-installer")
+local lsp = require('lsp-zero')
 
-lsp_installer.on_server_ready(function(server)
-    local opts = {
-        capabilities = capabilities,
-    }
-
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
-
-    -- This setup() function will take the provided server configuration and decorate it with the necessary properties
-    -- before passing it onwards to lspconfig.
-    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    server:setup(opts)
-end)
+lsp.preset('recommended')
+lsp.setup()
