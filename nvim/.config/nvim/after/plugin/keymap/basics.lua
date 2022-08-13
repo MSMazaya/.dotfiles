@@ -32,12 +32,6 @@ nnoremap("<c-l>", ":wincmd l<CR>")
 -- Buffer navigation
 nnoremap("<leader>bb", "<c-^>")
 
-nnoremap("<c-t>", ":tabnew | term<CR>")
-
--- No idea how to tnoremap without :
-vim.cmd(":tnoremap H <C-\\><C-n>:tabprevious<CR>")
-vim.cmd(":tnoremap L <C-\\><C-n>:tabnext<CR>")
-
 -- Highlight yank
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = vim.api.nvim_create_augroup("highlight_yank", { clear = true }),

@@ -19,4 +19,4 @@ vim.cmd("autocmd InsertEnter * set nocursorline")
 vim.cmd("autocmd InsertLeave * set cursorline")
 
 -- uncomment for transparent bg:
--- vim.cmd("highlight Normal guibg=none")
+vim.cmd("highlight Normal guibg=none")

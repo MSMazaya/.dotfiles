@@ -1,6 +1,15 @@
-vim.cmd [[packadd packer.nvim]]
+local fn = vim.fn
+local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+    packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
+        install_path })
+    vim.cmd [[packadd packer.nvim]]
+end
 
 return require('packer').startup(function(use)
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
+
     -- Idk what is this, but its a prerequisite to another plugin
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
@@ -27,7 +36,7 @@ return require('packer').startup(function(use)
 
     -- Navigation
     use 'nvim-telescope/telescope.nvim'
-    -- use 'ThePrimeagen/harpoon'
+    use 'ThePrimeagen/harpoon'
 
     -- Colorscheme
     -- use 'folke/tokyonight.nvim', { 'branch': 'main' }
@@ -42,9 +51,6 @@ return require('packer').startup(function(use)
         "feline-nvim/feline.nvim",
         branch = "0.5-compat",
     })
-    use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
-        require("toggleterm").setup()
-    end }
 
     use 'terrortylor/nvim-comment'
     use 'cohama/lexima.vim'
@@ -109,4 +115,10 @@ return require('packer').startup(function(use)
 
     -- Transparent background
     use 'xiyaowong/nvim-transparent'
+
+    -- Tab style
+    use {
+        'romgrk/barbar.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons' }
+    }
 end)
