@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+if [[ $# -eq 1 ]]; then
+    pattern=$1
+    echo "Creating: $pattern"
+else
+    echo "Usage: madir <pattern>"
+    exit 1
+fi
+
+lastCharacter="${pattern: -1}"
+
+if [[ $lastCharacter == "/" ]]; then
+    mkdir -p $pattern
+else
+    directory=""
+    arrayOfPatterns=(${pattern//\// })
+
+    for ((i = 0; i < ${#arrayOfPatterns[@]}-1; i++)); do
+        directory+="${arrayOfPatterns[i]}/"
+    done
+
+    if [[ $directory != "" ]]; then
+        mkdir -p $directory
+    fi
+
+    touch $pattern
+fi
