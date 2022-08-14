@@ -20,3 +20,7 @@ vim.cmd("autocmd InsertLeave * set cursorline")
 
 -- uncomment for transparent bg:
 vim.cmd("highlight Normal guibg=none")
+
+
+-- tagalong files
+vim.g.tagalong_additional_filetypes = { "tsx" }
