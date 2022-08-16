@@ -142,6 +142,12 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons' }
     }
 
+    -- Latex
+    use 'lervag/vimtex'
+
     -- Auto tag
     use "AndrewRadev/tagalong.vim"
+
+    -- Flutter
+    use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim' }
 end)

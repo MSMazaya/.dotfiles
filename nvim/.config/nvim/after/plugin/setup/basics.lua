@@ -10,3 +10,4 @@ require('gitsigns').setup()
 require("transparent").setup({
     enable = true,
 })
+require("flutter-tools").setup {}
