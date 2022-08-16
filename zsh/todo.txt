@@ -1,0 +1,5 @@
+Hello zay! Don't forget to be grateful for today and do the following activity cheerfully!
+
+Current todolist:
+
+1. Benerin flutter-tools buat nvim\n

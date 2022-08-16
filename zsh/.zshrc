@@ -136,3 +136,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias EDITOR=nvim
 alias VISUAL=nvim
+
+cat $HOME/todo.txt | cowsay -f stegosaurus
