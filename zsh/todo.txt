@@ -2,4 +2,12 @@ Hello zay! Don't forget to be grateful for today and do the following activity c
 
 Current todolist:
 
-1. Benerin flutter-tools buat nvim\n
+1. Benerin flutter-tools buat nvim
+
+2. Kerjain mobile app OP
+
+3. ARC Announcement kerjain
+
+4. Fillyn kejar product API sama deploy
+
+5. CLI Tools skilldep
