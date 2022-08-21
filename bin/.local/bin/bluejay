@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+selected_device=$(bluetoothctl paired-devices | fzf)
+
+device_description=(${selected_device// / })
+
+device_address=(${device_description[1]})
+
+bluetoothctl connect $device_address
