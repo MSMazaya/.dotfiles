@@ -6,6 +6,7 @@ nnoremap("<leader>ca", ":Lspsaga code_action<CR>")
 nnoremap("K", ":Lspsaga hover_doc<CR>")
 nnoremap("<F2>", ":Lspsaga rename<CR>")
 nnoremap("X", vim.diagnostic.open_float)
+nnoremap("<leader>o", "<cmd>LSoutlineToggle<CR>")
 
 vim.api.nvim_create_autocmd("BufWritePre", {
     group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
