@@ -11,3 +11,5 @@ require("transparent").setup({
     enable = true,
 })
 require("flutter-tools").setup {}
+require 'mind'.setup()
+require 'neoscroll'.setup()

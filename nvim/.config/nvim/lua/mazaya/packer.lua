@@ -55,8 +55,13 @@ return require('packer').startup(function(use)
     })
 
     use 'terrortylor/nvim-comment'
-    use 'cohama/lexima.vim'
     use 'kyazdani42/nvim-tree.lua'
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+
+    use 'karb94/neoscroll.nvim'
 
     -- Git
     use 'tpope/vim-fugitive'
@@ -131,13 +136,24 @@ return require('packer').startup(function(use)
     use "AndrewRadev/tagalong.vim"
 
     -- Flutter
-    use { 
-        'akinsho/flutter-tools.nvim', 
-        requires = 'nvim-lua/plenary.nvim', 
+    use {
+        'akinsho/flutter-tools.nvim',
+        requires = 'nvim-lua/plenary.nvim',
     }
 
     use {
         'tpope/vim-dadbod',
         'kristijanhusak/vim-dadbod-ui'
     }
+
+    use {
+        'phaazon/mind.nvim',
+        branch = 'v2',
+        requires = { 'nvim-lua/plenary.nvim' },
+        configure = function()
+            require 'mind'.setup()
+        end
+    }
+
+
 end)
