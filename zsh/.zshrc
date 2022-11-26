@@ -5,7 +5,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
 # Paths
-export GOPATH=$HOME/go:$HOME/Documents/fillyn/microservice/backend
+export GOPATH=$HOME/go:$HOME/Documents/fillyn/microservice/backend:/Documents/payable/payable-server
 export PATH=$PATH:$HOME/.platformio/penv/bin:/usr/local/go/bin:$GOPATH/bin
 
 # Sources
@@ -138,3 +138,8 @@ alias EDITOR=nvim
 alias VISUAL=nvim
 
 cat $HOME/todo.txt | cowsay -f stegosaurus
+
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+export DENO_INSTALL="/home/mazaya/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"

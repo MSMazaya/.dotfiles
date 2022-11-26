@@ -155,5 +155,5 @@ return require('packer').startup(function(use)
         end
     }
 
-
+    use 'sigmasd/deno-nvim'
 end)
