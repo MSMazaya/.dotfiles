@@ -74,29 +74,16 @@ cmp.setup.cmdline(':', {
     })
 })
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-local lsp_installer = require("nvim-lsp-installer")
+require 'mason'.setup()
+require("mason-lspconfig").setup()
 
-lsp_installer.on_server_ready(function(server)
-    local opts = {
-        capabilities = capabilities,
-    }
+local nvim_lsp = require("lspconfig")
 
-    if server.name == "denols" then
-        opts.root_dir = require('lspconfig').util.root_pattern("deno.json")
-    end
+nvim_lsp.sumneko_lua.setup {}
+nvim_lsp.denols.setup {
+    root_dir= nvim_lsp.util.root_pattern("deno.json"),
+}
 
-    if server.name == "tsserver" then
-        opts.root_dir = require('lspconfig').util.root_pattern("package.json")
-    end
-
-    -- (optional) Customize the options passed to the server
-    -- if server.name == "tsserver" then
-    --     opts.root_dir = function() ... end
-    -- end
-
-    -- This setup() function will take the provided server configuration and decorate it with the necessary properties
-    -- before passing it onwards to lspconfig.
-    -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    server:setup(opts)
-end)
+nvim_lsp.tsserver.setup {
+    root_dir= nvim_lsp.util.root_pattern("tsconfig.json"),
+}
