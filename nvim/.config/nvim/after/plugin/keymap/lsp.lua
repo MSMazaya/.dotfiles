@@ -8,9 +8,9 @@ nnoremap("<F2>", ":Lspsaga rename<CR>")
 nnoremap("X", vim.diagnostic.open_float)
 nnoremap("<leader>o", "<cmd>LSoutlineToggle<CR>")
 
--- vim.api.nvim_create_autocmd("BufWritePre", {
---     group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
---     callback = function()
---         vim.lsp.buf.formatting_sync()
---     end,
--- })
+vim.api.nvim_create_autocmd("BufWritePre", {
+    group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
+    callback = function()
+        vim.lsp.buf.format()
+    end,
+})

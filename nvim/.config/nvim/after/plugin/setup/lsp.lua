@@ -80,10 +80,32 @@ require("mason-lspconfig").setup()
 local nvim_lsp = require("lspconfig")
 
 nvim_lsp.sumneko_lua.setup {}
+
 nvim_lsp.denols.setup {
-    root_dir= nvim_lsp.util.root_pattern("deno.json"),
+    root_dir = nvim_lsp.util.root_pattern("deno.json"),
 }
 
 nvim_lsp.tsserver.setup {
-    root_dir= nvim_lsp.util.root_pattern("tsconfig.json"),
+    root_dir = nvim_lsp.util.root_pattern("tsconfig.json"),
 }
+
+nvim_lsp.gopls.setup {
+    root_dir = nvim_lsp.util.root_pattern("tsconfig.json"),
+}
+
+nvim_lsp.clangd.setup {
+    cmd = { "clangd", "--background-index" };
+    filetypes = { "c", "cpp", "objc", "objcpp" };
+}
+
+nvim_lsp.clangd.setup {
+    cmd = { "clangd", "--background-index" };
+    filetypes = { "c", "cpp", "objc", "objcpp" };
+}
+
+nvim_lsp.tailwindcss.setup {
+    root_dir = nvim_lsp.util.root_pattern('tailwind.config.js', 'tailwind.config.ts', 'postcss.config.js',
+        'postcss.config.ts')
+}
+
+nvim_lsp.pylsp.setup {}

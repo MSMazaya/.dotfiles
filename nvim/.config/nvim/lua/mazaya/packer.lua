@@ -66,8 +66,8 @@ return require('packer').startup(function(use)
     use 'karb94/neoscroll.nvim'
 
     -- Git
-    use 'tpope/vim-fugitive'
     use 'lewis6991/gitsigns.nvim'
+    use 'ThePrimeagen/git-worktree.nvim'
 
     -- Autocompletion
     use 'hrsh7th/cmp-nvim-lsp'

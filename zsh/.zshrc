@@ -143,3 +143,4 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 export DENO_INSTALL="/home/mazaya/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+export LAZYGIT_VERSION="0.36.0"
