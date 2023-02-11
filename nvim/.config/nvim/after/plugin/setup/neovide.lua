@@ -1,11 +1,37 @@
-let g:neovide_transparency=0.0
-let g:neovide_transparency_point=0.8
-let g:neovide_background_color = '#0f1117'.printf('%x', float2nr(255 * g:neovide_transparency_point))
+PreviousMode = vim.api.nvim_get_mode().mode
 
-function! ChangeTransparency(delta)
-  let g:neovide_transparency_point = g:neovide_transparency_point + a:delta
-  let g:neovide_background_color = '#0f1117'.printf('%x', float2nr(255 * g:neovide_transparency_point))
-endfunction
+local function animateCursor()
+    vim.g.neovide_cursor_animation_length = 0.06
+    vim.g.neovide_cursor_trail_size = 0.7
+end
 
-noremap <expr><D-]> ChangeTransparency(0.01)
-noremap <expr><D-[> ChangeTransparency(-0.01)
+local function stopCursorAnimation()
+    vim.g.neovide_cursor_animation_length = 0.01
+    vim.g.neovide_cursor_trail_size = 0
+end
+
+local function callWithDelay(fn, ms)
+    local timer = vim.loop.new_timer()
+    timer:start(ms, 0, vim.schedule_wrap(function()
+        fn()
+        timer:close()
+    end))
+end
+
+vim.api.nvim_create_autocmd("ModeChanged", {
+    group = vim.api.nvim_create_augroup("neovide_cursor_handler", { clear = true }),
+    callback = function()
+        mode = vim.api.nvim_get_mode().mode
+        if mode == "c" then
+            stopCursorAnimation()
+        else
+            if PreviousMode == "c" then
+                stopCursorAnimation()
+                callWithDelay(animateCursor, 1000)
+            else
+                stopCursorAnimation()
+            end
+        end
+        PreviousMode = mode
+    end,
+})

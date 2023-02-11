@@ -1,12 +1,10 @@
 -- Leader
 
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 -- Color schemes
-
 vim.cmd("colorscheme nightfox")
-vim.cmd("set guifont=FiraCode\\ NF:h8")
-vim.g.neovide_transparency = 0.5
+vim.cmd("set guifont=Caskaydia\\ Cove\\ Nerd\\ Font:h8")
 
 -- Autocompletion
 vim.cmd("set completeopt=menu,menuone,noselect")

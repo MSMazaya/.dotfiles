@@ -109,3 +109,5 @@ nvim_lsp.tailwindcss.setup {
 }
 
 nvim_lsp.pylsp.setup {}
+
+nvim_lsp.fortls.setup {}

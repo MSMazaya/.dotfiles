@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Paths
 export GOPATH=$HOME/go:$HOME/Documents/fillyn/microservice/backend:/Documents/payable/payable-server
-export PATH=$PATH:$HOME/.platformio/penv/bin:/usr/local/go/bin:$GOPATH/bin
+export PATH=$PATH:$HOME/.platformio/penv/bin:/usr/local/go/bin:$GOPATH/bin:/home/mazaya/go/bin
 
 # Sources
 source /opt/ros/noetic/setup.zsh
@@ -144,3 +144,22 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export DENO_INSTALL="/home/mazaya/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 export LAZYGIT_VERSION="0.36.0"
+source /home/mazaya/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# fnm
+export PATH="/home/mazaya/.local/share/fnm:$PATH"
+eval "`fnm env`"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Restart your shell for the changes to take effect.
+
+# Load pyenv-virtualenv automatically by adding
+# the following to ~/.bashrc:
+
+eval "$(pyenv virtualenv-init -)"
