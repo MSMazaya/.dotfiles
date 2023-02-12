@@ -15,10 +15,19 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
 
     -- LSP
-    use {
+    use { -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
-        "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim",
+        requires = {
+            -- Automatically install LSPs to stdpath for neovim
+            'williamboman/mason.nvim',
+            'williamboman/mason-lspconfig.nvim',
+
+            -- Useful status updates for LSP
+            'j-hui/fidget.nvim',
+
+            -- Additional lua configuration, makes nvim stuff amazing
+            'folke/neodev.nvim',
+        },
     }
 
     -- LSP Saga
@@ -36,6 +45,10 @@ return require('packer').startup(function(use)
         'nvim-treesitter/nvim-treesitter',
         'nvim-treesitter/nvim-treesitter-context',
         run = ':TSUpdate'
+    }
+    use { -- Additional text objects via treesitter
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        after = 'nvim-treesitter',
     }
 
     -- Navigation
@@ -67,6 +80,7 @@ return require('packer').startup(function(use)
 
     -- Git
     use 'lewis6991/gitsigns.nvim'
+    use 'tpope/vim-fugitive'
     use 'ThePrimeagen/git-worktree.nvim'
 
     -- Autocompletion
@@ -79,8 +93,10 @@ return require('packer').startup(function(use)
     use 'hrsh7th/vim-vsnip'
 
     -- Snip snip baby
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
+    use { -- Autocompletion
+        'hrsh7th/nvim-cmp',
+        requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+    }
 
     -- Diagnostics
     use 'kyazdani42/nvim-web-devicons'
@@ -172,4 +188,12 @@ return require('packer').startup(function(use)
     }
 
     use 'mbbill/undotree'
+
+    use { 'ibhagwan/fzf-lua',
+        -- optional for icon support
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
+
+    use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+    use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
 end)

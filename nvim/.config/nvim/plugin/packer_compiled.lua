@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
     url = "https://github.com/antoinemadec/FixCursorHold.nvim"
   },
-  LuaSnip = {
-    loaded = true,
-    path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/LuaSnip",
-    url = "https://github.com/L3MON4D3/LuaSnip"
-  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/barbar.nvim",
@@ -114,11 +109,6 @@ _G.packer_plugins = {
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
-  cmp_luasnip = {
-    loaded = true,
-    path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
-    url = "https://github.com/saadparwaiz1/cmp_luasnip"
-  },
   ["copilot.vim"] = {
     loaded = true,
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/copilot.vim",
@@ -139,10 +129,25 @@ _G.packer_plugins = {
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/feline.nvim",
     url = "https://github.com/feline-nvim/feline.nvim"
   },
+  ["fidget.nvim"] = {
+    loaded = true,
+    path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/fidget.nvim",
+    url = "https://github.com/j-hui/fidget.nvim"
+  },
   ["flutter-tools.nvim"] = {
     loaded = true,
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
     url = "https://github.com/akinsho/flutter-tools.nvim"
+  },
+  ["fzf-lua"] = {
+    loaded = true,
+    path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/fzf-lua",
+    url = "https://github.com/ibhagwan/fzf-lua"
+  },
+  ["git-worktree.nvim"] = {
+    loaded = true,
+    path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/git-worktree.nvim",
+    url = "https://github.com/ThePrimeagen/git-worktree.nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -159,15 +164,35 @@ _G.packer_plugins = {
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/html5.vim",
     url = "https://github.com/othree/html5.vim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
   ["lspsaga.nvim"] = {
     loaded = true,
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
   },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   ["mind.nvim"] = {
     loaded = true,
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/mind.nvim",
     url = "https://github.com/phaazon/mind.nvim"
+  },
+  ["neodev.nvim"] = {
+    loaded = true,
+    path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/neodev.nvim",
+    url = "https://github.com/folke/neodev.nvim"
   },
   ["neoscroll.nvim"] = {
     loaded = true,
@@ -195,15 +220,16 @@ _G.packer_plugins = {
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/nvim-comment",
     url = "https://github.com/terrortylor/nvim-comment"
   },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "https://github.com/williamboman/nvim-lsp-installer"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-neoclip.lua"] = {
+    config = { "\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fneoclip\frequire\0" },
+    loaded = true,
+    path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/nvim-neoclip.lua",
+    url = "https://github.com/AckslD/nvim-neoclip.lua"
   },
   ["nvim-surround"] = {
     loaded = true,
@@ -229,6 +255,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
+  },
+  ["nvim-treesitter-textobjects"] = {
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/home/mazaya/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -285,6 +318,11 @@ _G.packer_plugins = {
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
+  undotree = {
+    loaded = true,
+    path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
+  },
   ["vim-cmake"] = {
     loaded = true,
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/vim-cmake",
@@ -315,6 +353,11 @@ _G.packer_plugins = {
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/vim-pio",
     url = "https://github.com/normen/vim-pio"
   },
+  ["vim-sleuth"] = {
+    loaded = true,
+    path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/vim-sleuth",
+    url = "https://github.com/tpope/vim-sleuth"
+  },
   ["vim-svelte"] = {
     loaded = true,
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/vim-svelte",
@@ -337,6 +380,15 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: nvim-neoclip.lua
+time([[Config for nvim-neoclip.lua]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fneoclip\frequire\0", "config", "nvim-neoclip.lua")
+time([[Config for nvim-neoclip.lua]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-treesitter-textobjects ]]
+time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then
