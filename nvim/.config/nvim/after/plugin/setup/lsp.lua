@@ -35,25 +35,22 @@ local on_attach = function(_, bufnr)
     end, { desc = 'Format current buffer with LSP' })
 end
 
--- Enable the following language servers
---  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
---
---  Add any additional override configuration in the following tables. They will be passed to
---  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
     -- clangd = {},
     -- gopls = {},
     -- pyright = {},
     -- rust_analyzer = {},
     -- tsserver = {},
-
-    sumneko_lua = {
+    lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
             telemetry = { enable = false },
         },
     },
 }
+
+-- Setup neovim lua configuration
+require('neodev').setup()
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -79,10 +76,6 @@ mason_lspconfig.setup_handlers {
     end,
 }
 
---
--- require 'mason'.setup()
--- require("mason-lspconfig").setup()
---
 -- local nvim_lsp = require("lspconfig")
 --
 -- nvim_lsp.sumneko_lua.setup {}
@@ -116,6 +109,6 @@ mason_lspconfig.setup_handlers {
 --
 -- nvim_lsp.pylsp.setup {}
 --
--- nvim_lsp.fortls.setup {}
+-- nvim_lsp.dartls.setup {}
 --
 -- Setup neovim lua configuration

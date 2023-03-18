@@ -1,10 +1,8 @@
 local nnoremap = require("mazaya.keymap").nnoremap
 
 -- TODO: those should be silent tho
-nnoremap("<leader>gd", ":Lspsaga lsp_finder<CR> ")
-nnoremap("<leader>ca", ":Lspsaga code_action<CR>")
-nnoremap("K", ":Lspsaga hover_doc<CR>")
-nnoremap("<F2>", ":Lspsaga rename<CR>")
+nnoremap("<leader>ca", vim.lsp.buf.code_action)
+nnoremap("<F2>", vim.lsp.buf.rename)
 nnoremap("X", vim.diagnostic.open_float)
 nnoremap("<leader>o", "<cmd>LSoutlineToggle<CR>")
 
@@ -23,3 +21,30 @@ vim.api.nvim_create_user_command("ToggleFormat", function()
     FormatEnabled = not FormatEnabled
     print("Format is enabled: ", FormatEnabled)
 end, {})
+
+nnoremap('<leader>rn', vim.lsp.buf.rename)
+nnoremap('<leader>ca', vim.lsp.buf.code_action)
+
+nnoremap('gd', vim.lsp.buf.definition)
+nnoremap('gr', require('telescope.builtin').lsp_references)
+nnoremap('gI', vim.lsp.buf.implementation)
+nnoremap('<leader>D', vim.lsp.buf.type_definition)
+nnoremap('<leader>ds', require('telescope.builtin').lsp_document_symbols)
+nnoremap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols)
+
+-- See `:help K` for why this keymap
+nnoremap('K', vim.lsp.buf.hover)
+nnoremap('<C-k>', vim.lsp.buf.signature_help)
+
+-- Lesser used LSP functionality
+nnoremap('gD', vim.lsp.buf.declaration)
+nnoremap('<leader>wa', vim.lsp.buf.add_workspace_folder)
+nnoremap('<leader>wr', vim.lsp.buf.remove_workspace_folder)
+nnoremap('<leader>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+end)
+
+-- Create a command `:Format` local to the LSP buffer
+vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+    vim.lsp.buf.format()
+end, { desc = 'Format current buffer with LSP' })

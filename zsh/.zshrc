@@ -163,3 +163,4 @@ eval "$(pyenv init -)"
 # the following to ~/.bashrc:
 
 eval "$(pyenv virtualenv-init -)"
+export PATH=$HOME/quick-start/rtems/6/bin:"$PATH"
