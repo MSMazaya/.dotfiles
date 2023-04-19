@@ -14,8 +14,8 @@ require('neodev').setup()
 require('flit').setup {
     keys = { f = 'f', F = 'F', t = 't', T = 'T' },
     -- A string like "nv", "nvo", "o", etc.
-    labeled_modes = "nvi",
-    multiline = true,
+    labeled_modes = "nvo",
+    multiline = false,
     -- Like `leap`s similar argument (call-specific overrides).
     -- E.g.: opts = { equivalence_classes = {} }
     opts = {}
