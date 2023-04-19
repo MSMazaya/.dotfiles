@@ -3,7 +3,9 @@ local xnoremap = require("mazaya.keymap").xnoremap
 
 -- TODO: those should be silent tho
 nnoremap("<leader>ca", vim.lsp.buf.code_action)
-xnoremap('<leader>ca', vim.lsp.buf.range_code_action)
+xnoremap("<leader>ca", function()
+    vim.lsp.buf.range_code_action()
+end)
 nnoremap("<F2>", vim.lsp.buf.rename)
 nnoremap("X", vim.diagnostic.open_float)
 nnoremap("<leader>o", "<cmd>LSoutlineToggle<CR>")
