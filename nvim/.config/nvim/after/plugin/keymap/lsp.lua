@@ -7,6 +7,7 @@ nnoremap("X", vim.diagnostic.open_float)
 nnoremap("<leader>o", "<cmd>LSoutlineToggle<CR>")
 
 FormatEnabled = true
+VirtualTextEnabled = true
 
 vim.api.nvim_create_autocmd("BufWritePre", {
     group = vim.api.nvim_create_augroup("format_on_save", { clear = true }),
@@ -20,6 +21,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_user_command("ToggleFormat", function()
     FormatEnabled = not FormatEnabled
     print("Format is enabled: ", FormatEnabled)
+end, {})
+
+vim.api.nvim_create_user_command("ToggleVirtualText", function()
+    VirtualTextEnabled = not VirtualTextEnabled
+    print("VirtualText is enabled: ", VirtualTextEnabled)
 end, {})
 
 nnoremap('<leader>rn', vim.lsp.buf.rename)
@@ -44,7 +50,6 @@ nnoremap('<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 end)
 
--- Create a command `:Format` local to the LSP buffer
-vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-    vim.lsp.buf.format()
-end, { desc = 'Format current buffer with LSP' })
+-- DAP
+local dap = require('dap')
+nnoremap('<leader>b', dap.toggle_breakpoint)

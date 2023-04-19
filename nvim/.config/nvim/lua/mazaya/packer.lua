@@ -78,6 +78,12 @@ return require('packer').startup(function(use)
 
     use 'karb94/neoscroll.nvim'
 
+    use {
+        'ggandor/leap.nvim',
+        'tpope/vim-repeat',
+        'ggandor/flit.nvim',
+    }
+
     -- Git
     use 'lewis6991/gitsigns.nvim'
     use 'tpope/vim-fugitive'
@@ -196,9 +202,15 @@ return require('packer').startup(function(use)
     use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
     use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
 
-    use { 'nvim-treesitter/nvim-treesitter' }
     use { 'nvim-orgmode/orgmode', config = function()
         require('orgmode').setup {}
     end
     }
+
+    use 'mfussenegger/nvim-dap'
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+    use 'nvim-telescope/telescope-dap.nvim'
+    use 'theHamsta/nvim-dap-virtual-text'
+    use "jay-babu/mason-nvim-dap.nvim"
+    use 'mfussenegger/nvim-dap-python'
 end)

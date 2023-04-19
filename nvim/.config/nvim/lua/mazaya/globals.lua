@@ -22,3 +22,6 @@ vim.cmd("highlight Normal guibg=none")
 
 -- tagalong files
 vim.g.tagalong_additional_filetypes = { "tsx" }
+
+-- transparent
+vim.g.transparent_enabled = true

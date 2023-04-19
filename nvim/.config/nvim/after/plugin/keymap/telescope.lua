@@ -12,6 +12,9 @@ end)
 nnoremap("<leader>fh", function()
     require('telescope.builtin').help_tags({ hidden = true })
 end)
+nnoremap("<leader>fr", function()
+    require('telescope.builtin').resume({ hidden = true })
+end)
 
 -- -- This is actually coming from todo comments, but using telescope
 nnoremap("<leader>ft", "<cmd>TodoTelescope<cr>")
