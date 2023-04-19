@@ -1,5 +1,5 @@
 -- Basic Setup
-require("flutter-tools").setup {}
+require("flutter-tools").setup()
 require('nvim-surround').setup()
 require('nvim_comment').setup()
 require('trouble').setup()
