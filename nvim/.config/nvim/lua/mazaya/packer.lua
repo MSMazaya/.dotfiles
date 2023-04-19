@@ -84,6 +84,7 @@ return require('packer').startup(function(use)
         'ggandor/flit.nvim',
     }
 
+    use { 'echasnovski/mini.indentscope', branch = 'stable' }
     -- Git
     use 'lewis6991/gitsigns.nvim'
     use 'tpope/vim-fugitive'
@@ -96,6 +97,7 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
+    use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
 
     -- Snip snip baby
     use { -- Autocompletion
@@ -116,9 +118,6 @@ return require('packer').startup(function(use)
     -- Cmake
     use 'cdelledonne/vim-cmake'
     use 'antoinemadec/FixCursorHold.nvim'
-
-    -- Copilot
-    use 'github/copilot.vim'
 
     -- Svelte
     use 'othree/html5.vim'

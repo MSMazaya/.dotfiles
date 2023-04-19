@@ -20,3 +20,15 @@ require('flit').setup {
     -- E.g.: opts = { equivalence_classes = {} }
     opts = {}
 }
+require("mini.indentscope").setup {
+    symbol = "│",
+    options = { try_as_border = true },
+}
+require('tabnine').setup({
+    disable_auto_comment = true,
+    accept_keymap = "<Tab>",
+    dismiss_keymap = "<C-]>",
+    debounce_ms = 500,
+    suggestion_color = { gui = "#808080", cterm = 244 },
+    exclude_filetypes = { "TelescopePrompt" }
+})

@@ -11,6 +11,7 @@ cmp.setup({
         end,
     },
     mapping = {
+        ['<Tab>'] = cmp.config.disable,
         ["<C-n>"] = function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
