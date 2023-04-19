@@ -64,6 +64,9 @@ require('mason').setup()
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'
 
+-- local nvim_lsp = require("lspconfig")
+-- nvim_lsp.dartls.setup {}
+
 mason_lspconfig.setup {
     ensure_installed = vim.tbl_keys(servers),
 }
@@ -78,7 +81,6 @@ mason_lspconfig.setup_handlers {
     end,
 }
 
--- local nvim_lsp = require("lspconfig")
 --
 -- nvim_lsp.sumneko_lua.setup {}
 --
@@ -111,6 +113,5 @@ mason_lspconfig.setup_handlers {
 --
 -- nvim_lsp.pylsp.setup {}
 --
--- nvim_lsp.dartls.setup {}
 --
 -- Setup neovim lua configuration
