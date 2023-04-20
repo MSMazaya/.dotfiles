@@ -10,7 +10,6 @@ require('gitsigns').setup()
 require("transparent").setup()
 require('mind').setup()
 require('neoscroll').setup()
-require('flutter-tools').setup {}
 require('neodev').setup()
 require('flit').setup {
     keys = { f = 'f', F = 'F', t = 't', T = 'T' },
@@ -25,8 +24,9 @@ require("mini.indentscope").setup {
     symbol = "│",
     options = { try_as_border = true },
 }
+
 require('tabnine').setup({
-    disable_auto_comment = true,
+    disable_auto_comment = false,
     accept_keymap = "<Tab>",
     dismiss_keymap = "<C-]>",
     debounce_ms = 500,
