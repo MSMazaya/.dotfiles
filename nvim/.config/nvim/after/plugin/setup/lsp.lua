@@ -81,6 +81,9 @@ mason_lspconfig.setup_handlers {
     end,
 }
 
+require("mason-nvim-dap").setup({
+    ensure_installed = { 'stylua', 'dart' },
+})
 --
 -- nvim_lsp.sumneko_lua.setup {}
 --

@@ -81,7 +81,7 @@ return require('packer').startup(function(use)
     use {
         'ggandor/leap.nvim',
         'tpope/vim-repeat',
-        'ggandor/flit.nvim',
+        '/home/mazaya/Documents/oss/flit.nvim',
     }
 
     use { 'echasnovski/mini.indentscope', branch = 'stable' }
@@ -205,8 +205,9 @@ return require('packer').startup(function(use)
         require('orgmode').setup {}
     end
     }
-
     use 'mfussenegger/nvim-dap'
+    -- idk why the origin does not work with packer: jay-babu/mason-nvim-dap
+    use 'MSMazaya/mason-nvim-dap.nvim'
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
     use 'nvim-telescope/telescope-dap.nvim'
     use 'theHamsta/nvim-dap-virtual-text'

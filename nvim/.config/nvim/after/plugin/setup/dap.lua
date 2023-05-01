@@ -1,5 +1,4 @@
 require("mason-nvim-dap").setup()
-require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
 require("dapui").setup()
 
 local dap, dapui = require("dap"), require("dapui")
@@ -13,3 +12,10 @@ end
 dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
 end
+
+require('dap-python').setup('~/.virtualenvs/debugpy/bin/python')
+dap.adapters.dart = {
+    type = "executable",
+    command = "/home/mazaya/.local/share/nvim/mason/bin/dart-debug-adapter",
+    args = { "flutter" }
+}

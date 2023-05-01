@@ -142,7 +142,7 @@ _G.packer_plugins = {
   ["flit.nvim"] = {
     loaded = true,
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/flit.nvim",
-    url = "https://github.com/ggandor/flit.nvim"
+    url = "/home/mazaya/Documents/oss/flit.nvim"
   },
   ["flutter-tools.nvim"] = {
     loaded = true,
@@ -197,7 +197,7 @@ _G.packer_plugins = {
   ["mason-nvim-dap.nvim"] = {
     loaded = true,
     path = "/home/mazaya/.local/share/nvim/site/pack/packer/start/mason-nvim-dap.nvim",
-    url = "https://github.com/jay-babu/mason-nvim-dap.nvim"
+    url = "https://github.com/MSMazaya/mason-nvim-dap.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,

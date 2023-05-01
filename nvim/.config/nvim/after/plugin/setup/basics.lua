@@ -1,5 +1,10 @@
 -- Basic Setup
-require("flutter-tools").setup()
+require("flutter-tools").setup {
+    debugger = {
+        enabledd = true,
+        run_via_dap = true,
+    }
+}
 require('nvim-surround').setup()
 require('nvim_comment').setup()
 require('trouble').setup()

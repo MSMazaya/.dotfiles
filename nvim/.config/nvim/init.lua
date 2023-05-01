@@ -1,1 +1,2 @@
+require('flit')
 require('mazaya')
